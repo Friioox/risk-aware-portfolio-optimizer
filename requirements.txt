@@ -1,0 +1,21 @@
+# Risk-Aware Portfolio Optimizer – Python dependencies
+# Install with: pip install -r requirements.txt
+
+# ── Core numerical stack ─────────────────────────────────────────────
+numpy>=1.24
+pandas>=2.0
+scipy>=1.11
+
+# ── Optimization ─────────────────────────────────────────────────────
+cvxpy>=1.4          # convex optimization (Mean-CVaR, constrained MVO)
+
+# ── Market data ──────────────────────────────────────────────────────
+yfinance>=0.2.36    # live price download
+
+# ── Visualization ────────────────────────────────────────────────────
+matplotlib>=3.7
+
+# ── Optional / dev ───────────────────────────────────────────────────
+# plotly>=5.18        # interactive charts (uncomment if desired)
+# jupyter>=1.0        # notebook support
+# pytest>=7.0         # unit testing
