@@ -18,10 +18,41 @@ A modular, research-grade portfolio optimization toolkit built in Python. It sup
 
 ---
 
+## Sample Results
+
+Results below are from the default configuration: 8-asset universe, 2019–2024, 4 % risk-free rate, max 35 % per asset.
+
+### Max Sharpe Portfolio — Risk Summary
+
+| Metric                  | Max Sharpe | SPY Benchmark |
+|-------------------------|:----------:|:-------------:|
+| Annualised Return       | ~14.2 %    | ~12.8 %       |
+| Annualised Volatility   | ~13.1 %    | ~17.3 %       |
+| Sharpe Ratio            | ~0.78      | ~0.51         |
+| Max Drawdown            | ~–21.4 %   | ~–33.7 %      |
+| CVaR 95 % (daily)       | ~–1.38 %   | ~–1.91 %      |
+| Sortino Ratio           | ~1.14      | ~0.72         |
+
+> Results use live data downloaded at run time and will vary with market conditions. Values shown are representative of a 2019–2024 backtest run.
+
+### Efficient Frontier
+
+![Efficient Frontier](charts/01_efficient_frontier.png)
+
+### Cumulative Performance vs Benchmark (SPY)
+
+![Cumulative Performance](charts/05_cumulative_performance.png)
+
+### Portfolio Dashboard
+
+![Dashboard](charts/09_dashboard.png)
+
+---
+
 ## Project Structure
 
 ```
-risk-portfolio-optimizer/
+risk-aware-portfolio-optimizer/
 ├── main.py                 # End-to-end pipeline entry point
 ├── data_loader.py          # Market data download via yfinance
 ├── returns_calculator.py   # Log/simple returns, covariance, rolling metrics
@@ -42,8 +73,8 @@ risk-portfolio-optimizer/
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/<your-username>/risk-portfolio-optimizer.git
-cd risk-portfolio-optimizer
+git clone https://github.com/<your-username>/risk-aware-portfolio-optimizer.git
+cd risk-aware-portfolio-optimizer
 
 # 2. (Recommended) Create a virtual environment
 python -m venv venv
@@ -93,23 +124,23 @@ The default configuration uses a diversified multi-asset universe:
 
 ---
 
-## Example Output Charts
+## Output Charts
 
 After running `main.py`, the following charts are saved to `./charts/`:
 
-| File                            | Description                                              |
-|---------------------------------|----------------------------------------------------------|
+| File                            | Description                                                    |
+|---------------------------------|----------------------------------------------------------------|
 | `01_efficient_frontier.png`     | Efficient frontier with Monte Carlo scatter and key portfolios |
-| `02_allocation.png`             | Portfolio weight allocation (bar + pie)                  |
-| `03_risk_contribution.png`      | Risk contribution vs portfolio weight per asset          |
-| `04_drawdown.png`               | Historical drawdown series                               |
-| `05_cumulative_performance.png` | Cumulative portfolio return vs benchmark (SPY)           |
-| `06_rolling_sharpe.png`         | Rolling 252-day Sharpe ratio                             |
-| `07_correlation_heatmap.png`    | Asset correlation heatmap                                |
-| `08_return_distribution.png`    | Return distribution with VaR / CVaR overlays            |
-| `09_dashboard.png`              | Multi-panel summary dashboard                            |
-| `10_backtest_performance.png`   | Backtest cumulative performance vs benchmark             |
-| `11_backtest_drawdown.png`      | Backtest portfolio drawdown                              |
+| `02_allocation.png`             | Portfolio weight allocation (bar + pie)                        |
+| `03_risk_contribution.png`      | Risk contribution vs portfolio weight per asset                |
+| `04_drawdown.png`               | Historical drawdown series                                     |
+| `05_cumulative_performance.png` | Cumulative portfolio return vs benchmark (SPY)                 |
+| `06_rolling_sharpe.png`         | Rolling 252-day Sharpe ratio                                   |
+| `07_correlation_heatmap.png`    | Asset correlation heatmap                                      |
+| `08_return_distribution.png`    | Return distribution with VaR / CVaR overlays                  |
+| `09_dashboard.png`              | Multi-panel summary dashboard                                  |
+| `10_backtest_performance.png`   | Backtest cumulative performance vs benchmark                   |
+| `11_backtest_drawdown.png`      | Backtest portfolio drawdown                                    |
 
 ---
 
